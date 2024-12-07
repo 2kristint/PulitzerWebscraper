@@ -11,7 +11,7 @@ def main():
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     "Accept": "application/json",
     "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.pulitzer.org/"
+    "Referer": "https://www.pulitzer.org/",
     }
     session = cureq.Session()
     session.headers.update(headers)
@@ -22,6 +22,10 @@ def main():
             impersonate="chrome"
         )
         print(resp.status_code)
+        #headers for debugging
+        print("\nResponse Headers:")
+        for key, value in resp.headers.items():
+            print(f"{key}: {value}")
         winnersList = resp.json()
         nid_values = [entry["nid"] for entry in winnersList if "nid" in entry]
         print(nid_values)
@@ -79,6 +83,9 @@ def main():
                 print(f"This image was not able to be saved {result["image_url"]}")
 
         print(f"'images1' folder created at: {output_dir}")
+    
+    except requests.exceptions.RequestException as e:
+        print(f"An error occured: {e}")
 
     finally:
         session.close()  # Ensure the session is closed
