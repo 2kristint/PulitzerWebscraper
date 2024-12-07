@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: traceroute
+Version: 19.2.0
+Summary: Cross-platform traceroute for python.
+Home-page: https://github.com/pipecore/traceroute
+Author: Brendan Abel
+Author-email: 007brendan@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=2.7.0
+
+
+
+
